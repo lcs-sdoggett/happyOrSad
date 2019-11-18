@@ -9,12 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // MARK: Properties
 
+    @IBOutlet weak var messageInput: UITextField!
+    
+    @IBOutlet weak var labelOutlet: UILabel!
+    
+    // MARK: Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func analyze(_ sender: Any) {
+        
+    }
+    
 
 }
 
