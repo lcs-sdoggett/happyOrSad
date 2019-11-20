@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     // Outlets
     @IBOutlet weak var messageInput: UITextField!
     
-    @IBOutlet weak var labelOutlet: UILabel!
+    @IBOutlet weak var outputResult: UILabel!
     
     var emotion = 0
     
@@ -28,18 +28,42 @@ class ViewController: UIViewController {
     // Analyze text
     @IBAction func analyze(_ sender: Any) {
         
-        guard let message = messageInput.text else {
-            labelOutlet.text = "Enter a Message"
+        // Reset var emotion
+        emotion = 0
+        
+        // Unwarp messageInput
+        guard let phraseInput = messageInput.text, !phraseInput.isEmpty else {
+            outputResult.text = "Enter a Message"
             return
         }
         
-        if message.count >= 255 {
-            labelOutlet.text = "Message to long. Must no more then 255"
+        // Check if its more then 255 characters
+        if phraseInput.count >= 255 {
+            outputResult.text = "Message to long. Must no more then 255"
+            return
         }
         
-        
+        for character in phraseInput {
+            
+            switch character {
+            case "😃", "😊", "🙂", "😄" :
+                emotion += 1
+            case "☹", "🙁", "😕", "😔":
+                emotion -= 1
+            default:
+                outputResult.text = "None"
+        }
+            if emotion > 0 {
+                outputResult.text = "happy"
+            } else if emotion < 0 {
+                outputResult.text = "sad"
+            } else if emotion == 0 {
+                outputResult.text = "None"
+            }
+
     }
     
 
 }
 
+}
