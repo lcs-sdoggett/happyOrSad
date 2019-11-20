@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D5BD09C2385A10D00B9AB5E /* happyOrSadPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = happyOrSadPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7DDDF7252382FB3F00C2E9B5 /* happyOrSad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = happyOrSad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DDDF7282382FB3F00C2E9B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DDDF72A2382FB3F00C2E9B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 			children = (
 				7DDDF7282382FB3F00C2E9B5 /* AppDelegate.swift */,
 				7DDDF72A2382FB3F00C2E9B5 /* SceneDelegate.swift */,
+				7D5BD09C2385A10D00B9AB5E /* happyOrSadPlayground.playground */,
 				7DDDF72C2382FB3F00C2E9B5 /* ViewController.swift */,
 				7DDDF72E2382FB3F00C2E9B5 /* Main.storyboard */,
 				7DDDF7312382FB4100C2E9B5 /* Assets.xcassets */,
