@@ -58,7 +58,7 @@ class ViewController: UIViewController {
             } else if emotion < 0 {
                 outputResult.text = "sad"
             } else if emotion == 0 {
-                outputResult.text = "None"
+                outputResult.text = "unsure"
             }
 
     }
