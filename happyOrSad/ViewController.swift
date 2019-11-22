@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     
     var emotion = 0
     
+    var emojiCount = 0
+    
     // MARK: Methods
     
     override func viewDidLoad() {
@@ -31,6 +33,8 @@ class ViewController: UIViewController {
         // Reset var emotion
         emotion = 0
         
+        emojiCount = 0
+        
         // Unwarp messageInput
         guard let phraseInput = messageInput.text, !phraseInput.isEmpty else {
             outputResult.text = "Enter a Message"
@@ -43,27 +47,38 @@ class ViewController: UIViewController {
             return
         }
         
+        // Loop through each character and check if its either a smiley face or sad face
+        // Change variable emotion based on the expression of the emoji
+        // If there are n emotions, output will be "none"
         for character in phraseInput {
             
             switch character {
             case "😃", "😊", "🙂", "😄" :
                 emotion += 1
+                emojiCount += 1
             case "☹", "🙁", "😕", "😔":
                 emotion -= 1
+                emojiCount += 1
             default:
-                outputResult.text = "None"
-        }
-            if emotion > 0 {
-                outputResult.text = "happy"
-            } else if emotion < 0 {
-                outputResult.text = "sad"
-            } else if emotion == 0 {
-                outputResult.text = "unsure"
+                outputResult.text = "none"
+                
             }
-
+            
+        }
+        
+        // Output either "happy" or "sad" depending on the value of emotion
+        // If emotions is zero but there have been emojis, then it is none, else it is unsure
+        if emotion > 0 {
+            outputResult.text = "happy"
+            
+        } else if emotion < 0 {
+            outputResult.text = "sad"
+            
+        } else if emotion == 0 && emojiCount != 0 {
+            outputResult.text = "unsure"
+            
+        }
+        
     }
     
-
-}
-
 }
