@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     // Analyze text
     @IBAction func analyze(_ sender: Any) {
         
@@ -49,15 +49,19 @@ class ViewController: UIViewController {
         
         // Loop through each character and check if its either a smiley face or sad face
         // Change variable emotion based on the expression of the emoji
-        // If there are n emotions, output will be "none"
+        // If there are no emotions, output will be "none"
         for character in phraseInput {
             
             switch character {
             case "😃", "😊", "🙂", "😄" :
+                // If there is a happy emoji, add 1 to emotion
                 emotion += 1
+                // Since there is an emoji, add 1 to emojiCount
                 emojiCount += 1
             case "☹", "🙁", "😕", "😔":
+                // If there is a sad emoji, subtract 1 to emotion
                 emotion -= 1
+                // Since there is an emoji, add 1 to emojiCount
                 emojiCount += 1
             default:
                 outputResult.text = "none"
